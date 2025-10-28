@@ -22,6 +22,7 @@ public class Main {
 class Lab4 {
   public static ArrayList<Integer> insertionSort(ArrayList<Integer> integerList) {
     // Step 1 - Implement insertion sort algorithm here
+    long startTime = System.nanoTime();
     for (int i = 1; i < integerList.size(); i++){
       int currentElement = integerList.get(i);
       int k;
@@ -31,11 +32,15 @@ class Lab4 {
 
       integerList.set(k+1, currentElement);
     }
+    long endTime = System.nanoTime();
+    long elapsedTime = endTime - startTime;
+    System.out.println("Elapsed time Insertion Sort: " + elapsedTime + "ns");
     return integerList;
   }
 
   public static ArrayList<Integer> bubbleSort(ArrayList<Integer> integerList) {
     // Step 2 - Implement the bubble sort algorithm here
+    long startTime = System.nanoTime();
     boolean needPass = true;
     for ( int i = 1; i < integerList.size(); i++){
         needPass = false;
@@ -48,6 +53,9 @@ class Lab4 {
             }
         }
     }
+    long endTime = System.nanoTime();
+    long elapsedTime = endTime - startTime;
+    System.out.println("Elapsed time Bubble Sort: " + elapsedTime + "ns");
     return integerList;
   }
 
